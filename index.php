@@ -1,113 +1,172 @@
 <?php
-    include('../head.php');
+    include('head.php');
 ?>
 <!DOCTYPE html>
+<?php
+function loginTitle($op)
+{
+  if($op == 'errkod')
+    $title = 'Amaran!';
+
+  return $title;
+}
+function loginMessage($op)
+{
+
+  if($op == 'errkod')
+    $msg = 'Salah No Pekerja/Kata Laluan';
+
+  return $msg;
+}
+?>
+<html lang="en">
+
 <head>
-<link rel="icon" href="img/majlis-perbandaran-kuantan-300x262_esW.png" type="image/x-icon">
-<link rel="shortcut icon" href="majlis-perbandaran-kuantan-300x262_esW.png" type="image/x-icon" />
-<style>
-body {
 
-    background: url('img/blue_plain.jpg') no-repeat fixed center center;
-    background-size: cover;
-    font-family: Arial;
-}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-.logo {
-    width: 154px;
-    height: 161px;
-    background: url('images/pbtlogo.png') no-repeat;
-    margin: 30px auto;
-}
+  <title>e-MPK</title>
 
-.login-block {
-    width: 320px;
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    border-top: 5px solid #0a3d62;
-    margin: 0 auto;
-}
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-.login-block h1 {
-    text-align: center;
-    color: #000;
-    font-size: 18px;
-    text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-.login-block input {
-    width: 100%;
-    height: 50px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    font-size: 14px;
-    font-family: Arial;
-    padding: 0 20px 0 50px;
-    outline: none;
-}
-
-.login-block input#username {
-    background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
-    background-size: 16px 80px;
-}
-
-.login-block input#username:focus {
-    background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px bottom no-repeat;
-    background-size: 16px 80px;
-}
-
-.login-block input#password {
-    background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
-    background-size: 16px 80px;
-}
-
-.login-block input#password:focus {
-    background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px bottom no-repeat;
-    background-size: 16px 80px;
-}
-
-.login-block input:active, .login-block input:focus {
-    border: 1px solid #1962AD;
-}
-
-.login-block button {
-    width: 100%;
-    height: 40px;
-    background:#0a3d62;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 1px solid #0a3d62;
-    color: #fff;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-family: Arial;
-    outline: none;
-    cursor: pointer;
-}
-
-.login-block button:hover {
-    background:  #88C2EA;
-}
-
-</style>
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <script src="vendor/jquery/jquery.min.js"></script>
+ <script language="javascript">
+  <?php if(isset($_GET['op'])) { ?>
+			var document;
+			$(document).ready(function(){
+				$('#myModal').modal('show');
+			});
+	<?php } ?>
+	</script>
 </head>
 
-<body>
+<body class="bg-info">
 
-<div class="logo"><img src="img/majlis-perbandaran-kuantan-300x262_esW.png" width="154" height="121"></div>
-<div class="login-block">
-    <h1><font face="arial" >Login</font></h1>
-    <form name="form1" method="post" action="">
-    <input type="text" value="" placeholder="No Pekerja" id="username" name="username" autocomplete="off" />
-    <input type="password" value="" placeholder="Katalaluan" id="password" name="password" />
-    <button type="submit" name="submit" class="login login-submit" value="login">Login</button></form>
+<style>
+blink {
+        animation: blinker 0.6s linear infinite;
+        color: #fff;
+       }
+      @keyframes blinker {
+        50% { opacity: 0; }
+       }
+       .blink-one {
+         animation: blinker-one 1s linear infinite;
+       }
+       @keyframes blinker-one {
+         0% { opacity: 0; }
+       }
+       .blink-two {
+         animation: blinker-two 1.4s linear infinite;
+       }
+       @keyframes blinker-two {
+         100% { opacity: 0; }
+       }
+
+       .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+
+
+</style>
+  <div class="container align-content-center">
+
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+<div class="col-xl-10 col-lg-12 col-md-9">
+  <!-- Header -->
+<blink>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</blink>
+<img class="center" src="img/MPKBTM.png">
+
+<div class="card o-hidden border-0 shadow-lg my-5">
+    <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div  class="col-lg-6 d-none d-lg-block" height="100px" width="100px">
+                <img src="img/majlis-perbandaran-kuantan-300x262_esW.png" width="250%" height="90%" class="center">
+                </div>
+              <div class="col-lg-6">
+            <div class="p-5">
+
+                      <div class="login-form">
+                        <form name="loginform" method="post" action="login.php">
+                        <marquee class="font-italic">SELAMAT DATANG</marquee>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="No Pekerja" name="staffNo" required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Kata Laluan" name="staffPass" required="required">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn bg-info text-white btn-block" name="login">LOG MASUK</button>
+                            </div>
+
+                        </form>
+
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-10 col-lg-12 col-md-9">
+
+            <blink>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</blink>
 </div>
+</div>
+
+      </div>
+</div>
+    </div>
+
+  </div>
+<!-- Logout Modal-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h4 class="modal-title">
+									<?php if(isset($_GET['op'])) { echo loginTitle($_GET['op']); } ?>
+								</h4>
+							</div>
+							<div class="modal-body">
+								<p><?php if(isset($_GET['op'])) { echo loginMessage($_GET['op']); } ?></p>
+							</div>
+          </button>
+          <div class="modal-footer">
+          <button class="btn btn-info" type="button" data-dismiss="modal">OK</button>
+        </div>
+        </div>
+
+    </div>
+  </div>
+      <!--End modal -->
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
 </body>
 
 </html>
